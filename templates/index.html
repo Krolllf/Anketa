@@ -1,0 +1,106 @@
+{% extends 'base.html'%} 
+
+{% block title %} 
+Анкета
+{% endblock %} 
+
+
+{% block subtitle %}
+<center></center>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+      
+        <form onsubmit="return validateForm()">
+            <!-- Вопрос 1: С вариантами выбора -->
+            <div class="question">
+                <label for="q1">1. Вопрос?</label>
+                <label><input type="radio" name="q1" value="До 18"> вариант ответа</label><br>
+                <label><input type="radio" name="q1" value="18-25"> вариант ответа</label><br>
+                <label><input type="radio" name="q1" value="25-40"> вариант ответа</label><br>
+                <label><input type="radio" name="q1" value="40+"> вариант ответа</label>
+            </div>
+
+            <!-- Вопрос 2: С вариантами выбора -->
+            <div class="question">
+                <label for="q2">2. Вопрос?</label>
+                <label><input type="radio" name="q2" value="Django">вариант ответа</label><br>
+                <label><input type="radio" name="q2" value="Flask">вариант ответа</label>
+            </div>
+
+            <!-- Вопрос 3: С вариантами выбора -->
+            <div class="question">
+                <label for="q3">3. Вопрос?</label>
+                <label><input type="radio" name="q3" value="Git"> вариант ответа</label><br>
+                <label><input type="radio" name="q3" value="SVN"> вариант ответа</label><br>
+                <label><input type="radio" name="q3" value="Mercurial"> вариант ответа</label><br>
+                <label><input type="radio" name="q3" value="Другое"> вариант ответа</label>
+            </div>
+
+            <!-- Вопрос 4: Текстовый -->
+            <div class="question">
+                <label for="q4">4. Вопрос?</label>
+                <input type="text" id="q4" name="q4" required>
+            </div>
+
+            <!-- Вопрос 5: Текстовый -->
+            <div class="question">
+                <label for="q5">5. Вопрос?</label>
+                <input type="text" id="q5" name="q5" required>
+            </div>
+
+            <!-- Вопрос 6: Текстовый -->
+            <div class="question">
+                <label for="q6">6. Вопрос?</label>
+                <input type="text" id="q6" name="q6" required>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let allFilled = true;
+
+            // Проверка радио-кнопок
+            const radioGroups = document.querySelectorAll('input[type="radio"]');
+            const radioNames = new Set();
+            radioGroups.forEach(radio => radioNames.add(radio.name));
+
+            radioNames.forEach(name => {
+                const checked = document.querySelector(`input[name="${name}"]:checked`);
+                if (!checked) {
+                    allFilled = false;
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                        radio.parentElement.style.color = 'red';
+                    });
+                } else {
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                        radio.parentElement.style.color = '';
+                    });
+                }
+            });
+
+            // Проверка текстовых полей
+            const textInputs = document.querySelectorAll('input[type="text"]');
+            textInputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    allFilled = false;
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+
+            if (!allFilled) {
+                alert('Пожалуйста, заполните все поля перед отправкой.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+{% endblock %}

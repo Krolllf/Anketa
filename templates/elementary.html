@@ -1,0 +1,21 @@
+{% extends 'base.html'%} 
+{% block title %} 
+
+Главная страница 
+ 
+{% endblock %} 
+{% block subtitle %}
+
+
+{% endblock %}
+{% block content %}
+<!-- <img class="backhome__img" src="{{ url_for('static', filename='img/grey.jpg') }}" alt="law"> -->
+<main class="px-3">
+    <h1><ya-tr-span data-index="5-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Cover your page." data-translation="Прикройте свою страницу." data-ch="0" data-type="trSpan" style="visibility: inherit !important;">Приветствую!</ya-tr-span></h1>
+    <p class="lead"><ya-tr-span data-index="6-0"  data-ch="0" data-type="trSpan" style="visibility: inherit !important;">Я ценю ваше время.</ya-tr-span><ya-tr-span data-index="6-1"  data-ch="0" data-type="trSpan" style="visibility: inherit !important;">Ответьте на несколько вопросов, и мы подберем для вас оптимальное решение, которое сэкономит ваши силы и ресурсы. Это займет всего пару минут!</ya-tr-span></p>
+    <p class="lead">
+      <a href="{{ url_for('index') }}" class="btn btn-lg btn-light fw-bold border-white bg-white"><ya-tr-span data-index="7-0"  data-ch="0" data-type="trSpan" style="visibility: inherit !important;">Пройти анкету<--</ya-tr-span></a>
+    </p>
+  </main>
+
+{% endblock %}

@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+header, footer {
+    padding: 20px;
+
+}
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    flex: 1 1 auto;
+}
+
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+
+}
+ 
+
+.btn:hover {
+    color: #243482;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2) ;
+}
+
+
+
+/*HEADR*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(214, 214, 214);
+    
+    /* -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);  */
+    border-radius: 17px; 
+
+    
+
+}
+.backhome__img{
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    background-color: rgb(214, 214, 214);
+}
+/* .header__img{
+   
+
+} */
+
+/*FOOTER*/
+footer {
+    .bi {
+        fill: currentColor; /* Использует цвет текста родительского элемента */
+    }
+    
+    /* Цвет для конкретных иконок */
+    .icon-instagram {
+        color: #e4405f; /* Цвет Instagram */
+    }
+    
+    .icon-telegram {
+        color: #0088CC; /* Цвет Telegram */
+    }
+    
+    /* Изменение цвета при наведении */
+    a:hover .bi {
+        color: #000; /* Цвет при наведении */
+    }
+
+}
+
+
+
+       body{
+        padding: 25px;
+       }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .question input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+        .error {
+            border-color: red !important;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
